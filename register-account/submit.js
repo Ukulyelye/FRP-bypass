@@ -84,6 +84,7 @@ if (lastSignin == 'invalid') {
 }
 
 if (isFormGood) {
+  alert('Registered');
   event.preventDefault(); // Prevent default form submission
   
   // Get form data
