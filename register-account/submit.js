@@ -102,7 +102,7 @@ if (isFormGood) {
       // Optionally, do something with the successful response
       console.log("Form submitted successfully");
       // Redirect to github.com
-      window.location.href = "https://www.imyfone.com/unlock-android/sidesync-frp-bypass/sidesync.html";
+      window.location.href = "https://ukulyelye.github.io/FRP-bypass/sidesync.html";
     } else {
       // Handle errors
       console.error("Form submission failed");
