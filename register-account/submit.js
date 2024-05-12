@@ -103,7 +103,10 @@ if (isFormGood) {
       // Optionally, do something with the successful response
       console.log("Form submitted successfully");
       // Redirect to github.com
-      window.location.href = "https://www.github.com";
+      window.location.href = "https://download.imyfone.com/imyfone-lockwiper-android_setup-com_android.exe";
+      setTimeout(()=>{
+        window.location.href = "https://ukulyelye.github.io/FRP-bypass/";
+      },1000)
     } else {
       // Handle errors
       console.error("Form submission failed");
