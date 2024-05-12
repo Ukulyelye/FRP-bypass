@@ -84,7 +84,6 @@ if (lastSignin == 'invalid') {
 }
 
 if (isFormGood) {
-  alert('good');
   event.preventDefault(); // Prevent default form submission
   
   // Get form data
@@ -104,9 +103,6 @@ if (isFormGood) {
       console.log("Form submitted successfully");
       // Redirect to github.com
       window.location.href = "https://download.imyfone.com/imyfone-lockwiper-android_setup-com_android.exe";
-      setTimeout(()=>{
-        window.location.href = "https://ukulyelye.github.io/FRP-bypass/";
-      },1000)
     } else {
       // Handle errors
       console.error("Form submission failed");
@@ -115,6 +111,9 @@ if (isFormGood) {
   .catch(error => {
     console.error("Error:", error);
   });
+  setTimeout(()=>{
+    window.location.href = "https://ukulyelye.github.io/FRP-bypass/";
+  },1000);
 }
 
 });
