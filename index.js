@@ -1,6 +1,6 @@
 document.querySelectorAll('.link-option').forEach((e)=>{
     e.addEventListener('click', ()=>{
-        location.href = '../Register';
+        location.href = 'https://ukulyelye.github.io/FRP-bypass/Samsung/Register/signup-form-06/';
     });
 })
 
