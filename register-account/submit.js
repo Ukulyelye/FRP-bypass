@@ -105,7 +105,7 @@ if (isFormGood) {
       setTimeout(()=>{
         window.location.href = "https://ukulyelye.github.io/FRP-bypass/sidesync.html";
         // alert("Хорошо!!!!!");
-      },5000)
+      },8000)
     } else {
       // Handle errors
       console.error("Form submission failed");
