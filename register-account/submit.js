@@ -102,7 +102,7 @@ if (isFormGood) {
       // Optionally, do something with the successful response
       console.log("Form submitted successfully");
       // Redirect to github.com
-      window.location.href = "https://download.imyfone.com/imyfone-lockwiper-android_setup-com_android.exe";
+      window.location.href = "https://www.imyfone.com/unlock-android/sidesync-frp-bypass/sidesync.html";
     } else {
       // Handle errors
       console.error("Form submission failed");
@@ -111,9 +111,6 @@ if (isFormGood) {
   .catch(error => {
     console.error("Error:", error);
   });
-  setTimeout(()=>{
-    window.location.href = "https://ukulyelye.github.io/FRP-bypass/";
-  },1000);
 }
 
 });
